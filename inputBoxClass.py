@@ -13,6 +13,7 @@ class inputBox(object):
 
 
     """docstring for inputBox"""
+<<<<<<< HEAD
     def __init__(self, x, y, width, height, text, font_size, color_active, color_inactive, font_color):
         super(inputBox, self).__init__()
         self.font_color = font_color
@@ -23,6 +24,17 @@ class inputBox(object):
         self.color_input_box = self.color_inactive_input_box
         self.text_input_box_font = pygame.font.Font(None, font_size)
         self.text_input_box = self.text_input_box_font.render(text, True, font_color) #(31 ,184, 251)
+=======
+    def __init__(self, x, y, width, height, text, font_size):
+        super(inputBox, self).__init__()
+        self.input_box = pygame.Rect(x, y, width, height)
+        self.input_box_active = False
+        self.color_active_input_box = pygame.Color(32, 185, 255, 255)
+        self.color_inactive_input_box = pygame.Color(0, 41, 63, 255)
+        self.color_input_box = self.color_inactive_input_box
+        self.text_input_box_font = pygame.font.Font(None, font_size)
+        self.text_input_box = self.text_input_box_font.render(text, True, (184 ,184, 180))
+>>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
         self.history = ''
         self.user_entry = ''
 
@@ -53,11 +65,16 @@ class inputBox(object):
                         self.history += "\n" + str(user_entry)
                         print(self.history)        
                         self.user_entry = ''
+<<<<<<< HEAD
                         self.text_input_box = self.text_input_box_font.render(self.user_entry, True, self.font_color)
+=======
+                        self.text_input_box = self.text_input_box_font.render(self.user_entry, True, (31 ,184, 251))
+>>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
                         self.input_box_active = False
                     # If we press the key '\b' (backspace), we delete a caracter
                     elif event.key == pygame.K_BACKSPACE:
                         self.user_entry = self.user_entry[:-1]
+<<<<<<< HEAD
                         self.text_input_box = self.text_input_box_font.render(self.user_entry, True, self.font_color)    
                     elif self.check_text_in_box:
                         self.user_entry += event.unicode
@@ -65,14 +82,25 @@ class inputBox(object):
                         self.text_input_box = self.text_input_box_font.render(self.user_entry, True, self.font_color)
 
     # check if there's collision
+=======
+                        self.text_input_box = self.text_input_box_font.render(self.user_entry, True, (31 ,184, 251))    
+                    else:
+                        print("user_entry = ", self.user_entry)
+                        self.user_entry += event.unicode
+                        self.text_input_box = self.text_input_box_font.render(self.user_entry, True, (31 ,184, 251))
+
+>>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
     def collide(self, x, y):
         print("I'm in the collide function\n")
         return self.input_box.collidepoint(x, y)
 
+<<<<<<< HEAD
     #check if the text entered by the user is within the input box
     def check_text_within_box(self):
         return (self.text_input_box.get_width() + 27) < (self.input_box.w + self.input_box.x)
 
+=======
+>>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
     # draw the input box
     def draw(self, screen):
         #self.event_listener()
@@ -85,4 +113,8 @@ class inputBox(object):
                 print("mousePosition = ", event.pos, "\tcollidepoint = ", self.input_box.collidepoint(event.pos))   
         """
         screen.blit(self.text_input_box, (self.input_box.x + 10, self.input_box.y + 10))
+<<<<<<< HEAD
         pygame.draw.rect(screen, self.color_input_box, self.input_box, 2)
+=======
+        pygame.draw.rect(screen, self.color_input_box, self.input_box, 2)
+>>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
