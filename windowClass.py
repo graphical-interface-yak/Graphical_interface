@@ -66,16 +66,11 @@ class JarvisWindow():
         self.Jarvis_title_main_window = self.Jarvis_title_main_window_font.render("Jarvis", True, (31 ,184, 251))
         self.title_opening = self.title_opening_font.render("Jarvis", True, (31 ,184, 251))
         #Create un input box for the interaction with user
-<<<<<<< HEAD
         color_active = pygame.Color(32, 185, 255, 255)
         color_inactive = pygame.Color(0, 41, 63, 255)
         self.font_color = (31 ,184, 251)
         self.user_input_box = inputBox(10, self.height - 50, self.width - 20, 40, 'Ask something...', 20, color_active, color_inactive, self.font_color)
         self.answer_input_box = inputBox(10, self.height - 100, self.width - 20, 40, 'Hi what can i do for you ?', 20, color_active, color_inactive, self.font_color) 
-=======
-        self.user_input_box = inputBox(10, self.height - 50, self.width - 20, 40, 'Ask something...', 20)
-        self.answer_input_box = inputBox(10, self.height - 100, self.width - 20, 40, 'Hi what can i do for you ?', 20) 
->>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
 
 
     # Get if the mouse is on the info button
@@ -126,29 +121,23 @@ class JarvisWindow():
                         self.user_input_box.history += "\n" + str(self.user_input_box.user_entry)
                         print(self.user_input_box.history)        
                         self.user_input_box.user_entry = ''
-<<<<<<< HEAD
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)
-=======
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))
->>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
                         self.user_input_box.input_box_active = False
                     # If we press the key '\b' (backspace), we delete a caracter
                     elif event.key == pygame.K_BACKSPACE:
                         self.user_input_box.user_entry = self.user_input_box.user_entry[:-1]
-<<<<<<< HEAD
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)    
                     elif self.user_input_box.check_text_within_box():
                         self.user_input_box.user_entry += event.unicode
                         print("user_entry = ", self.user_input_box.user_entry)
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)
-=======
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))    
-                    else:
+                    elif self.user_input_box.check_text_within_box():
                         print("user_entry = ", self.user_input_box.user_entry)
                         self.user_input_box.user_entry += event.unicode
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))
->>>>>>> 66628b971cf0afb04ce9bf7672dfcebbeb799793
-    
+
                         
         return nothing               
 
