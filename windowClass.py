@@ -65,7 +65,7 @@ class JarvisWindow():
         self.short_info_description= self.info_description_font.render(short_description, True, (184 ,184, 180))
         self.Jarvis_title_main_window = self.Jarvis_title_main_window_font.render("Jarvis", True, (31 ,184, 251))
         self.title_opening = self.title_opening_font.render("Jarvis", True, (31 ,184, 251))
-        #Create un input box for the interaction with user
+        #Create un input box for the interaction with the user
         color_active = pygame.Color(32, 185, 255, 255)
         color_inactive = pygame.Color(0, 41, 63, 255)
         self.font_color = (31 ,184, 251)
