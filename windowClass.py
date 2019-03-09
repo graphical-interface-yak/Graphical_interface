@@ -122,7 +122,6 @@ class JarvisWindow():
                         print(self.user_input_box.history)        
                         self.user_input_box.user_entry = ''
                         self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)
-                        self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))
                         self.user_input_box.input_box_active = False
                     # If we press the key '\b' (backspace), we delete a caracter
                     elif event.key == pygame.K_BACKSPACE:
@@ -131,14 +130,8 @@ class JarvisWindow():
                     elif self.user_input_box.check_text_within_box():
                         self.user_input_box.user_entry += event.unicode
                         print("user_entry = ", self.user_input_box.user_entry)
-                        self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)
-                        self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))    
-                    elif self.user_input_box.check_text_within_box():
-                        print("user_entry = ", self.user_input_box.user_entry)
-                        self.user_input_box.user_entry += event.unicode
-                        self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, (31 ,184, 251))
-
-                        
+                        self.user_input_box.text_input_box = self.user_input_box.text_input_box_font.render(self.user_input_box.user_entry, True, self.font_color)   
+                    
         return nothing               
 
 
